@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIVVIA Studio — Handcrafted Fine Jewelry | Natural Gemstones</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="VIVVIA Studio offers handcrafted fine jewelry made with natural gemstones and 925 sterling silver. Shop bracelets, necklaces, earrings and more. Free engraving. Gift-ready packaging." />
+  <meta name="keywords" content="handcrafted jewelry, fine jewelry, gemstone bracelet, pearl necklace, sterling silver earrings, natural gemstone jewelry, VIVVIA Studio, custom engraving jewelry, gift jewelry" />
+  <meta name="author" content="VIVVIA Studio" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vivvia.netlify.app/" />
+
+  <!-- Open Graph (Facebook, Pinterest, WeChat sharing) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VIVVIA Studio — Handcrafted Fine Jewelry" />
+  <meta property="og:description" content="Handcrafted jewelry made with natural gemstones and precious metals. Shop bracelets, necklaces, earrings and more." />
+  <meta property="og:url" content="https://vivvia.netlify.app/" />
+  <meta property="og:site_name" content="VIVVIA Studio" />
+  <meta property="og:image" content="https://vivvia.netlify.app/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="VIVVIA Studio — Handcrafted Fine Jewelry" />
+  <meta name="twitter:description" content="Natural gemstone jewelry, handcrafted with care. Free engraving on every piece." />
+  <meta name="twitter:image" content="https://vivvia.netlify.app/og-image.jpg" />
+
+  <!-- Structured Data: helps Google show rich results in search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JewelryStore",
+    "name": "VIVVIA Studio",
+    "description": "Handcrafted fine jewelry made with natural gemstones and 925 sterling silver.",
+    "url": "https://vivvia.netlify.app",
+    "logo": "https://vivvia.netlify.app/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/vivviastudio",
+      "https://www.pinterest.com/vivviastudio"
+    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "offerCount": "40+"
+    }
+  }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #FDFAF6;
+      --white: #FFFFFF;
+      --off-white: #F7F3ED;
+      --gold: #B8934A;
+      --gold-light: #D4AF72;
+      --gold-pale: #F0E4C8;
+      --ink: #1A1714;
+      --ink-mid: #4A4540;
+      --ink-muted: #9A948E;
+      --border: #E8E2D9;
+      --border-gold: rgba(184,147,74,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.4rem 5rem;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.4s;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; letter-spacing: 0.28em;
+      color: var(--ink); text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); font-style: italic; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--ink-muted);
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      transition: color 0.3s; font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-cart {
+      background: var(--ink); color: var(--white);
+      border: none; padding: 0.55rem 1.4rem;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; font-weight: 400; transition: background 0.3s;
+    }
+    .nav-cart:hover { background: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-left {
+      background: var(--off-white);
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem;
+      position: relative;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute; top: 3rem; right: 3rem; bottom: 3rem; left: 3rem;
+      border: 1px solid var(--border-gold);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+      opacity: 0; animation: fadeUp 0.9s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 28px; height: 1px; background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 300; line-height: 1.05; letter-spacing: 0.01em;
+      margin-bottom: 1.8rem;
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); display: block; }
+    .hero-desc {
+      font-size: 0.8rem; color: var(--ink-muted); max-width: 340px;
+      line-height: 1.9; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
+    }
+    .btn-dark {
+      background: var(--ink); color: var(--white);
+      padding: 0.9rem 2.4rem; text-decoration: none;
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif; font-weight: 400;
+      transition: background 0.3s; display: inline-block;
+    }
+    .btn-dark:hover { background: var(--gold); }
+    .btn-ghost {
+      border: 1px solid var(--border); color: var(--ink-mid);
+      padding: 0.9rem 2.4rem; text-decoration: none;
+      font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif; font-weight: 400;
+      transition: all 0.3s; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-right {
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      opacity: 0; animation: fadeIn 1.2s 0.3s forwards;
+    }
+    .hero-right-inner {
+      width: 60%; aspect-ratio: 2/3;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem; position: relative;
+    }
+    .hero-gem { font-size: 5rem; }
+    .hero-right-label {
+      font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .hero-right-tag {
+      position: absolute; bottom: -1px; left: -1px;
+      background: var(--gold); color: var(--white);
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      opacity: 0; animation: fadeUp 0.9s 1.2s forwards;
+    }
+    .hero-scroll span { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink-muted); }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
+
+    /* ── TICKER ── */
+    .ticker {
+      overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 0.85rem 0; background: var(--off-white);
+    }
+    .ticker-track {
+      display: flex; gap: 0; white-space: nowrap;
+      animation: ticker 22s linear infinite;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 2rem;
+      font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--ink-mid); padding: 0 2rem;
+    }
+    .ticker-sep { color: var(--gold); font-size: 0.5rem; }
+
+    /* ── SECTIONS ── */
+    section { padding: 7rem 5rem; }
+    .section-tag {
+      font-size: 0.58rem; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .section-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 300; line-height: 1.1;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    /* ── COLLECTIONS ── */
+    .collections { background: var(--white); }
+    .collections-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3.5rem;
+    }
+    .collections-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1px;
+      background: var(--border);
+    }
+    .col-card {
+      background: var(--white); padding: 3rem 2rem;
+      position: relative; cursor: pointer;
+      transition: background 0.35s;
+      display: flex; flex-direction: column; justify-content: space-between;
+      min-height: 360px;
+    }
+    .col-card:hover { background: var(--off-white); }
+    .col-card.featured { background: var(--off-white); min-height: 400px; }
+    .col-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .col-num { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gold); }
+    .col-badge {
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      background: var(--gold-pale); color: var(--gold);
+      padding: 0.3rem 0.7rem;
+    }
+    .col-icon { font-size: 3.5rem; margin: 1.5rem 0; display: block; }
+    .col-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; font-weight: 300; margin-bottom: 0.4rem;
+    }
+    .col-sub { font-size: 0.65rem; letter-spacing: 0.15em; color: var(--ink-muted); }
+    .col-arrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-muted); margin-top: 1.5rem;
+      transition: color 0.3s; text-decoration: none;
+    }
+    .col-card:hover .col-arrow { color: var(--gold); }
+    .col-arrow::after { content: '→'; font-size: 0.9rem; }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--cream); }
+    .products-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 3.5rem;
+    }
+    .view-all {
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-mid); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .view-all::after { content: '→'; }
+    .view-all:hover { color: var(--gold); }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    }
+    .prod-card { cursor: pointer; }
+    .prod-img {
+      aspect-ratio: 3/4;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative; overflow: hidden;
+      transition: border-color 0.3s;
+      margin-bottom: 1.2rem;
+    }
+    .prod-card:hover .prod-img { border-color: var(--gold); }
+    .prod-label-wrap {
+      position: absolute; top: 1rem; left: 1rem; display: flex; gap: 0.4rem; flex-wrap: wrap;
+    }
+    .prod-label {
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      padding: 0.28rem 0.6rem;
+    }
+    .label-new { background: var(--ink); color: var(--white); }
+    .label-ltd { background: var(--gold); color: var(--white); }
+    .prod-quick {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(26,23,20,0.88);
+      color: var(--white); text-align: center;
+      padding: 0.8rem;
+      font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+      transform: translateY(100%); transition: transform 0.3s;
+    }
+    .prod-card:hover .prod-quick { transform: translateY(0); }
+    .prod-material { font-size: 0.58rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.3rem; }
+    .prod-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; margin-bottom: 0.5rem; }
+    .prod-bottom { display: flex; align-items: center; justify-content: space-between; }
+    .prod-price { font-size: 0.9rem; color: var(--ink); font-weight: 400; }
+    .prod-add {
+      background: none; border: 1px solid var(--border);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--ink-muted); padding: 0.4rem 0.9rem;
+      cursor: pointer; transition: all 0.3s;
+    }
+    .prod-add:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+    /* ── ECWID STORE ── */
+    .store-section { background: var(--white); }
+    #my-store { min-height: 400px; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--off-white); padding: 0; }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .about-visual {
+      background: var(--cream);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; font-size: 7rem;
+      border-right: 1px solid var(--border);
+    }
+    .about-visual::before {
+      content: 'VIVVIA';
+      position: absolute; font-family: 'Cormorant Garamond', serif;
+      font-size: 9rem; font-weight: 300; letter-spacing: 0.08em;
+      color: rgba(184,147,74,0.06); white-space: nowrap;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+    }
+    .about-text {
+      padding: 6rem 5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .about-text p { font-size: 0.82rem; color: var(--ink-mid); line-height: 1.95; margin-bottom: 1.4rem; }
+    .about-stats { display: flex; gap: 3rem; margin: 2.5rem 0; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; font-weight: 300; color: var(--gold); display: block; line-height: 1;
+    }
+    .stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); margin-top: 0.4rem; display: block; }
+
+    /* ── PROMISE ── */
+    .promise { background: var(--white); }
+    .promise-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border); margin-top: 4rem;
+    }
+    .promise-item {
+      background: var(--white); padding: 2.5rem 1.8rem; text-align: center;
+      transition: background 0.3s;
+    }
+    .promise-item:hover { background: var(--off-white); }
+    .promise-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
+    .promise-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 300; margin-bottom: 0.6rem;
+    }
+    .promise-text { font-size: 0.72rem; color: var(--ink-muted); line-height: 1.75; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--off-white); text-align: center; }
+    .testimonials-inner { max-width: 640px; margin: 4rem auto 0; }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem; color: var(--gold-pale); line-height: 0.5;
+      margin-bottom: 1.5rem; display: block;
+    }
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-style: italic; font-weight: 300;
+      color: var(--ink); line-height: 1.5; margin-bottom: 1.5rem;
+    }
+    .quote-author { font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+    .quote-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 0.2rem; margin-bottom: 0.8rem; display: block; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: var(--ink); text-align: center; padding: 6rem 5rem;
+    }
+    .newsletter .section-tag { justify-content: center; color: var(--gold-light); }
+    .newsletter .section-tag::before { background: var(--gold-light); }
+    .newsletter .section-title { color: var(--white); }
+    .newsletter .section-title em { color: var(--gold-light); }
+    .newsletter p { color: rgba(255,255,255,0.5); font-size: 0.78rem; max-width: 380px; margin: 1rem auto 2.5rem; }
+    .nl-form { display: flex; max-width: 420px; margin: 0 auto; }
+    .nl-form input {
+      flex: 1; background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-right: none; color: var(--white);
+      padding: 0.9rem 1.2rem; font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem; outline: none; transition: border-color 0.3s;
+    }
+    .nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .nl-form input:focus { border-color: var(--gold); }
+    .nl-form button {
+      background: var(--gold); border: none; color: var(--white);
+      padding: 0.9rem 1.6rem; font-family: 'Montserrat', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; font-weight: 400; transition: background 0.3s; white-space: nowrap;
+    }
+    .nl-form button:hover { background: var(--gold-light); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white); border-top: 1px solid var(--border); padding: 4rem 5rem 2rem;
+    }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.28em; color: var(--ink); display: block; margin-bottom: 1rem; text-decoration: none; }
+    .footer-logo span { color: var(--gold); font-style: italic; }
+    .footer-brand p { font-size: 0.75rem; color: var(--ink-muted); line-height: 1.8; max-width: 200px; }
+    .footer-col h4 { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; font-weight: 500; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.65rem; }
+    .footer-col a { text-decoration: none; color: var(--ink-muted); font-size: 0.75rem; transition: color 0.3s; }
+    .footer-col a:hover { color: var(--ink); }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { font-size: 0.65rem; color: var(--ink-muted); letter-spacing: 0.05em; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.85s ease, transform 0.85s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay { transition-delay: 0.15s; }
+    .reveal-delay2 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav { padding: 1.2rem 2rem; }
+      .nav-links { display: none; }
+      section { padding: 5rem 2rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { display: none; }
+      .hero-left { padding: 6rem 2rem 4rem; }
+      .hero-left::after { inset: 1.5rem; }
+      .collections-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-visual { min-height: 260px; font-size: 4rem; }
+      .about-text { padding: 3rem 2rem; }
+      .promise-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#" class="nav-logo">VIVVIA <span>Studio</span></a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-cart" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
+      Cart (0)
+    </button>
+  </div>
+</nav>
+
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Handcrafted Fine Jewelry</p>
+    <h1>
+      Wear Your
+      <em>Energy</em>
+    </h1>
+    <p class="hero-desc">Each piece is thoughtfully crafted with natural gemstones and precious metals — made to be worn, cherished, and passed on.</p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn-dark">Shop Now</a>
+      <a href="#collections" class="btn-ghost">Explore Collections</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <span class="hero-gem">💍</span>
+      <span class="hero-right-label">New Arrivals 2025</span>
+      <span class="hero-right-tag">Free Engraving</span>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">925 Sterling Silver <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">18K Gold Plated <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Natural Gemstones <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Handcrafted <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Free Engraving <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Gift Wrapping <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">7-Day Returns <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">925 Sterling Silver <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">18K Gold Plated <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Natural Gemstones <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Handcrafted <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Free Engraving <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">Gift Wrapping <span class="ticker-sep">✦</span></span>
+    <span class="ticker-item">7-Day Returns <span class="ticker-sep">✦</span></span>
+  </div>
+</div>
+
+
+<!-- ══ COLLECTIONS ══ -->
+<section class="collections" id="collections">
+  <div class="collections-header reveal">
+    <div>
+      <p class="section-tag">Our Collections</p>
+      <h2 class="section-title">Find Your <em>Perfect Piece</em></h2>
+    </div>
+    <a href="#shop" class="view-all">View All</a>
+  </div>
+  <div class="collections-grid reveal">
+    <div class="col-card featured">
+      <div class="col-card-top">
+        <span class="col-num">01</span>
+        <span class="col-badge">Bestseller</span>
+      </div>
+      <div>
+        <span class="col-icon">📿</span>
+        <h3 class="col-name">Bracelets</h3>
+        <p class="col-sub">14 Styles Available</p>
+        <a href="#shop" class="col-arrow">Browse Bracelets</a>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-card-top"><span class="col-num">02</span></div>
+      <div>
+        <span class="col-icon">📿</span>
+        <h3 class="col-name">Necklaces</h3>
+        <p class="col-sub">10 Styles Available</p>
+        <a href="#shop" class="col-arrow">Browse</a>
+      </div>
+    </div>
+    <div class="col-card">
+      <div class="col-card-top"><span class="col-num">03</span></div>
+      <div>
+        <span class="col-icon">✨</span>
+        <h3 class="col-name">Earrings</h3>
+        <p class="col-sub">18 Styles Available</p>
+        <a href="#shop" class="col-arrow">Browse</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SHOP (Ecwid embed zone) ══ -->
+<section class="store-section" id="shop">
+  <div class="reveal">
+    <p class="section-tag">New Arrivals</p>
+    <h2 class="section-title" style="margin-bottom:3.5rem">Shop <em>VIVVIA Studio</em></h2>
+  </div>
+
+  <!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  HOW TO ADD YOUR ECWID STORE                        ║
+  ║  1. Sign up free at ecwid.com                       ║
+  ║  2. Dashboard → Website → "Add to any website"      ║
+  ║  3. Copy your embed code (two snippets)             ║
+  ║  4. Paste your <script> + <div> below               ║
+  ║  5. Delete the demo product cards                   ║
+  ╚══════════════════════════════════════════════════════╝
+
+  Your Ecwid code goes here:
+  <script data-cfasync="false" type="text/javascript"
+    src="https://app.ecwid.com/script.js?YOUR_STORE_ID"
+    charset="utf-8"></script>
+  <div id="my-store-YOUR_STORE_ID"></div>
+  -->
+
+  <!-- Demo product cards — delete once Ecwid is connected -->
+  <div class="products-grid reveal">
+
+    <div class="prod-card">
+      <div class="prod-img">
+        💍
+        <div class="prod-label-wrap"><span class="prod-label label-new">New</span></div>
+        <div class="prod-quick">Quick Add</div>
+      </div>
+      <p class="prod-material">925 Silver · Garnet</p>
+      <h3 class="prod-name">Rose Bloom Ring</h3>
+      <div class="prod-bottom">
+        <span class="prod-price">$68</span>
+        <button class="prod-add">Add</button>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">
+        📿
+        <div class="prod-label-wrap"><span class="prod-label label-ltd">Limited</span></div>
+        <div class="prod-quick">Quick Add</div>
+      </div>
+      <p class="prod-material">18K Gold · Freshwater Pearl</p>
+      <h3 class="prod-name">Moonlit Pearl Necklace</h3>
+      <div class="prod-bottom">
+        <span class="prod-price">$94</span>
+        <button class="prod-add">Add</button>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">
+        ✨
+        <div class="prod-label-wrap"><span class="prod-label label-new">New</span></div>
+        <div class="prod-quick">Quick Add</div>
+      </div>
+      <p class="prod-material">925 Silver · Moonstone</p>
+      <h3 class="prod-name">Stardust Earrings</h3>
+      <div class="prod-bottom">
+        <span class="prod-price">$48</span>
+        <button class="prod-add">Add</button>
+      </div>
+    </div>
+
+    <div class="prod-card">
+      <div class="prod-img">
+        💎
+        <div class="prod-quick">Quick Add</div>
+      </div>
+      <p class="prod-material">14K Gold · Blue Topaz</p>
+      <h3 class="prod-name">Ocean Heart Bracelet</h3>
+      <div class="prod-bottom">
+        <span class="prod-price">$122</span>
+        <button class="prod-add">Add</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ ABOUT ══ -->
+<div class="about" id="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">💎</div>
+    <div class="about-text reveal reveal-delay">
+      <p class="section-tag">Our Story</p>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Crafted with <em>Intention</em></h2>
+      <p>VIVVIA Studio was born from a love of natural beauty and the belief that jewelry should mean something. Every piece is designed to reflect a moment, a feeling, or a memory that lasts forever.</p>
+      <p>We work with ethically sourced gemstones and recycled metals, creating designs that are as mindful as they are beautiful. No mass production — only small-batch, handcrafted pieces made with care.</p>
+      <div class="about-stats">
+        <div>
+          <span class="stat-num">2019</span>
+          <span class="stat-label">Founded</span>
+        </div>
+        <div>
+          <span class="stat-num">300+</span>
+          <span class="stat-label">Designs</span>
+        </div>
+        <div>
+          <span class="stat-num">5k+</span>
+          <span class="stat-label">Happy Customers</span>
+        </div>
+      </div>
+      <a href="#shop" class="btn-dark">Shop the Collection</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ PROMISE ══ -->
+<section class="promise">
+  <div class="reveal" style="text-align:center">
+    <p class="section-tag" style="justify-content:center">Why VIVVIA</p>
+    <h2 class="section-title">Our <em>Promise</em> to You</h2>
+  </div>
+  <div class="promise-grid reveal">
+    <div class="promise-item">
+      <span class="promise-icon">🏅</span>
+      <h3 class="promise-name">Certified Materials</h3>
+      <p class="promise-text">All pieces come with a material certificate. 925 silver and K-gold verified.</p>
+    </div>
+    <div class="promise-item">
+      <span class="promise-icon">📦</span>
+      <h3 class="promise-name">Gift-Ready Packaging</h3>
+      <p class="promise-text">Beautifully boxed and ready to gift, with a complimentary handwritten card.</p>
+    </div>
+    <div class="promise-item">
+      <span class="promise-icon">🔄</span>
+      <h3 class="promise-name">7-Day Returns</h3>
+      <p class="promise-text">Easy no-questions-asked returns within 7 days of delivery.</p>
+    </div>
+    <div class="promise-item">
+      <span class="promise-icon">✏️</span>
+      <h3 class="promise-name">Free Engraving</h3>
+      <p class="promise-text">Personalize any piece with a name, date, or message at no extra cost.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TESTIMONIAL ══ -->
+<section class="testimonials">
+  <div class="reveal">
+    <p class="section-tag" style="justify-content:center">What Customers Say</p>
+    <h2 class="section-title">Loved by <em>Thousands</em></h2>
+  </div>
+  <div class="testimonials-inner reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">The Rose Bloom Ring arrived in the most beautiful packaging I've ever seen. The quality is extraordinary — it looks even more stunning in person. I'll be a VIVVIA customer for life.</p>
+    <span class="quote-stars">★ ★ ★ ★ ★</span>
+    <span class="quote-author">— Emily R., Verified Buyer</span>
+  </div>
+</section>
+
+
+<!-- ══ NEWSLETTER ══ -->
+<section class="newsletter" id="contact">
+  <p class="section-tag reveal">Stay Connected</p>
+  <h2 class="section-title reveal">Be the First to <em>Know</em></h2>
+  <p class="reveal">Subscribe and receive 10% off your first order, plus early access to new arrivals.</p>
+  <div class="nl-form reveal">
+    <input type="email" placeholder="Your email address" />
+    <button type="button">Subscribe</button>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="footer-logo">VIVVIA <span>Studio</span></a>
+      <p>Handcrafted jewelry for the moments that matter most.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Bracelets</a></li>
+        <li><a href="#">Necklaces</a></li>
+        <li><a href="#">Earrings</a></li>
+        <li><a href="#">Bracelets</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Custom Engraving</a></li>
+        <li><a href="#">Gift Wrapping</a></li>
+        <li><a href="#">Returns Policy</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Care Instructions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 VIVVIA Studio. All rights reserved.</p>
+    <p>Handcrafted with love ✦</p>
+  </div>
+</footer>
+
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow =
+      window.scrollY > 40 ? '0 1px 24px rgba(0,0,0,0.07)' : 'none';
+  });
+</script>
+
+</body>
+</html>
